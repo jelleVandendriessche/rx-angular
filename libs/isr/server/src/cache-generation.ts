@@ -125,7 +125,7 @@ export class CacheGeneration {
       const addToCache = () => {
         if (
           this.isrConfig.onlyCacheSuccessfulResponses &&
-          !this.isSuccessFullResponse(res)
+          !this.isSuccessFulResponse(res)
         ) {
           this.logger.log(
             `The url: ${cacheKey} was not successfull (Status code:${res.statusCode}) and therefore not cached.`,
@@ -169,7 +169,7 @@ export class CacheGeneration {
     }
   }
 
-  private isSuccessFullResponse(res: Response) {
+  private isSuccessFulResponse(res: Response) {
     return res.statusCode >= 200 && res.statusCode < 300;
   }
 }
